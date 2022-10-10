@@ -1,4 +1,4 @@
-import{C as E,a as R,g as k,b,c as D,d as z,e as A,G as Q,A as _,s as h,r as o,f as T,j as r,h as i,i as G,R as I,u as O,L as j,k as B}from"./index.831c0869.js";const W=e=>({type:z,data:e}),F=e=>({type:A,data:e}),S=e=>({type:E,data:e}),H=e=>({type:Q,data:e}),P=e=>({type:_,data:e}),Y=()=>({type:R}),q=e=>t=>{t(P(e)),k(e).then(s=>{let a=s.data.result.songs;t(F(a)),t(S(!1)),t(H(b()))}).catch(()=>{console.log("\u641C\u7D22\u7ED3\u679C\u51FA\u73B0\u9519\u8BEF")})},M=()=>e=>{D().then(t=>{e(W(t.result.hots)),e(H(b()))}).catch(()=>{console.log("\u70ED\u95E8\u641C\u7D22\u51FA\u9519")})},U=h.div`
+import{C,a as N,g as E,b as R,c as k,d as D,e as z,G as A,A as _,s as d,r as a,f as Q,j as t,h as i,i as T,R as G,u as I,L as O,k as j,l as B}from"./index.dea55070.js";const W=e=>({type:D,data:e}),F=e=>({type:z,data:e}),b=e=>({type:C,data:e}),P=e=>({type:A,data:e}),Y=e=>({type:_,data:e}),q=()=>({type:N}),M=e=>r=>{r(Y(e)),E(e).then(n=>{let o=n.data.result.songs;r(F(o)),r(b(!1))}).catch(()=>{console.log("\u641C\u7D22\u7ED3\u679C\u51FA\u73B0\u9519\u8BEF")})},U=()=>e=>{R().then(r=>{e(W(r.result.hots)),e(P(k()))}).catch(()=>{console.log("\u70ED\u95E8\u641C\u7D22\u51FA\u9519")})},$=d.div`
     z-index: 99;
     position: absolute;
     width: 100%;
@@ -50,13 +50,13 @@ import{C as E,a as R,g as k,b,c as D,d as z,e as A,G as Q,A as _,s as h,r as o,f
             padding-right: 0.8rem;
         }
     }
-`,x=h.div`
+`,x=d.div`
     position: absolute;
     top: 5rem;
     bottom: 0;
     width: 100%;
     display: ${e=>e.show?"":"none"};
-`,$=h.div`
+`,J=d.div`
     padding: 0 20px;
     margin-bottom: 1rem;
     .history {
@@ -90,7 +90,7 @@ import{C as E,a as R,g as k,b,c as D,d as z,e as A,G as Q,A as _,s as h,r as o,f
             border-radius: 15px;
         }
     }
-`,J=h.div`
+`,K=d.div`
     .title {
         font-size: 18px;
         font-weight: bold;
@@ -127,7 +127,7 @@ import{C as E,a as R,g as k,b,c as D,d as z,e as A,G as Q,A as _,s as h,r as o,f
     .name {
         color: black;
     }
-`,K=h.ul`
+`,V=d.ul`
     padding-left: 1.5rem;
     z-index: 112;
     background-color: white;
@@ -156,7 +156,7 @@ import{C as E,a as R,g as k,b,c as D,d as z,e as A,G as Q,A as _,s as h,r as o,f
     }
    }
     
-`,V=h.div`
+`,X=d.div`
   margin-top: 2rem;
   .search-box {
     padding: 0.5rem;
@@ -181,4 +181,4 @@ import{C as E,a as R,g as k,b,c as D,d as z,e as A,G as Q,A as _,s as h,r as o,f
     }
   }
   
-`,X=e=>{const t=o.exports.useRef(null),[s,a]=o.exports.useState(""),{newQuery:l}=e,{handleQuery:c}=e;let p=o.exports.useMemo(()=>T(c,500),[c]);return o.exports.useEffect(()=>{t.current.focus()},[]),o.exports.useEffect(()=>{p(s)},[s]),o.exports.useEffect(()=>{let d=s;l!==s&&(d=l,t.current.value=l),a(d)},[l]),r(V,{children:i("div",{className:"search-box",children:[r("i",{className:"fa fa-search"}),r("input",{ref:t,placeholder:"\u97F3\u4E50/\u6B4C\u624B/\u62FC\u97F3",onChange:d=>{let u=d.target.value;a(u)}}),r("i",{className:"fa fa-close",style:s?{display:"block"}:{display:"none"},onClick:()=>{a(""),t.current.value="",t.current.focus()}})]})})},Z=e=>{const[t,s]=o.exports.useState(""),{hotList:a,songsList:l,searchHistory:c,enterLoading:p}=e,{getHotListDispatch:f,getResultSongsListDispatch:m,changeEnterLoadingDispatch:y,deleteAllSearchHistory:d}=e,u=O();o.exports.useEffect(()=>{f()},[]);const L=n=>{s(n),!!n&&t.trim()&&(m(n),y(!0))},v=()=>{c.length&&d()},w=()=>c.length?i("div",{className:"history",children:[i("div",{className:"title",children:[r("span",{children:"\u641C\u7D22\u8BB0\u5F55"}),r("i",{className:"fa fa-trash",onClick:()=>v()})]}),r("div",{className:"content",children:c.map((n,g)=>r("span",{onClick:()=>s(n),children:n},n+g))})]}):null,C=()=>r("ul",{children:a.map((n,g)=>i("li",{className:"hotword",onClick:()=>s(n.first),children:[r("div",{className:"top",children:g+1}),r("div",{className:"name",children:n.first})]},n.first))}),N=()=>r(K,{children:l.map(n=>r("li",{children:i("div",{className:"info",children:[r("span",{children:n.name}),i("span",{children:[B(n.artists)," - ",n.album.name]})]})},n.id))});return i(U,{children:[i("div",{className:"header",children:[r("span",{children:r("i",{className:"fa fa-chevron-left",onClick:()=>u(-1)})}),r("div",{className:"title",children:"\u641C\u7D22"})]}),r(X,{newQuery:t,handleQuery:L}),i(x,{show:!t&&t=="",children:[r($,{children:w()}),i(J,{children:[r("div",{className:"title",children:"\u70ED\u95E8\u641C\u7D22"}),C()]})]}),r(x,{show:t,children:N()}),p?r(j,{}):null]})},ee=e=>({hotList:e.search.hotList,songsList:e.search.songsList,searchHistory:e.search.searchHistory,enterLoading:e.search.enterLoading}),te=e=>({getHotListDispatch(){e(M())},getResultSongsListDispatch(t){e(q(t))},changeEnterLoadingDispatch(t){e(S(t))},deleteAllSearchHistory(){e(Y())}});var ne=G(ee,te)(I.memo(Z));export{ne as default};
+`,Z=e=>{const r=a.exports.useRef(null),[n,o]=a.exports.useState(""),{newQuery:l}=e,{handleQuery:h}=e;let p=a.exports.useMemo(()=>Q(h,500),[h]);return a.exports.useEffect(()=>{r.current.focus()},[]),a.exports.useEffect(()=>{p(n)},[n]),a.exports.useEffect(()=>{let c=n;l!==n&&(c=l,r.current.value=l),o(c)},[l]),t(X,{children:i("div",{className:"search-box",children:[t("i",{className:"fa fa-search"}),t("input",{ref:r,placeholder:"\u97F3\u4E50/\u6B4C\u624B/\u62FC\u97F3",onChange:c=>{let u=c.target.value;o(u)}}),t("i",{className:"fa fa-close",style:n?{display:"block"}:{display:"none"},onClick:()=>{o(""),r.current.value="",r.current.focus()}})]})})},ee=e=>{const[r,n]=a.exports.useState(""),{hotList:o,songsList:l,searchHistory:h,enterLoading:p}=e,{getHotListDispatch:f,getResultSongsListDispatch:m,changeEnterLoadingDispatch:y,deleteAllSearchHistory:c}=e,u=I();a.exports.useEffect(()=>{o.length||f()},[]);const S=s=>{n(s),!!s&&r.trim()&&(m(s),y(!0))},H=()=>{c(),B([])},L=()=>h.length?i("div",{className:"history",children:[i("div",{className:"title",children:[t("span",{children:"\u641C\u7D22\u8BB0\u5F55"}),t("i",{className:"fa fa-trash",onClick:()=>H()})]}),t("div",{className:"content",children:h.map((s,g)=>t("span",{onClick:()=>n(s),children:s},s+g))})]}):null,v=()=>t("ul",{children:o.map((s,g)=>i("li",{className:"hotword",onClick:()=>n(s.first),children:[t("div",{className:"top",children:g+1}),t("div",{className:"name",children:s.first})]},s.first))}),w=()=>t(V,{children:l.map(s=>t("li",{children:i("div",{className:"info",children:[t("span",{children:s.name}),i("span",{children:[j(s.artists)," - ",s.album.name]})]})},s.id))});return i($,{children:[i("div",{className:"header",children:[t("span",{children:t("i",{className:"fa fa-chevron-left",onClick:()=>u(-1)})}),t("div",{className:"title",children:"\u641C\u7D22"})]}),t(Z,{newQuery:r,handleQuery:S}),i(x,{show:!r&&r=="",children:[t(J,{children:L()}),i(K,{children:[t("div",{className:"title",children:"\u70ED\u95E8\u641C\u7D22"}),v()]})]}),t(x,{show:r,children:w()}),p?t(O,{}):null]})},te=e=>({hotList:e.search.hotList,songsList:e.search.songsList,searchHistory:e.search.searchHistory,enterLoading:e.search.enterLoading}),re=e=>({getHotListDispatch(){e(U())},getResultSongsListDispatch(r){e(M(r))},changeEnterLoadingDispatch(r){e(b(r))},deleteAllSearchHistory(){e(q())}});var ne=T(te,re)(G.memo(ee));export{ne as default};
