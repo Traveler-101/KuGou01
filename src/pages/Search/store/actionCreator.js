@@ -43,7 +43,6 @@ export const getResultSongsList = (query) => {
                 let res = data.data.result.songs
                 dispatch(changeResultSong(res))
                 dispatch(changeEnterLoading(false))
-                dispatch(getSearchHistory(getSearchHistory_local()))
             })
             .catch(() => {
                 console.log('搜索结果出现错误')
@@ -53,8 +52,6 @@ export const getResultSongsList = (query) => {
 }
 export const getHotList = () => {
     return dispatch => {
-        // dispatch(addSearchHistory())
-        
         getHotListRequest()
             .then(data => {
                 dispatch(changeHotList(data.result.hots))

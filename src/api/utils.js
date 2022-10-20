@@ -37,7 +37,7 @@ export const getName = list => {
 };
 
 export const isPathPartlyExisted = (path) => {
-  const arr = ['/home', '/watch', '/sing', '/me'];
+  const arr = ['/home', '/watch', '/sing', '/me', '/playlist', '/vedio', '/rock'];
   // 任何情况 结果数组第二项都是arr里匹配的单项
   let pathRes = path.split('/')
   if (pathRes[1] && arr.indexOf('/' + pathRes[1]) != -1) return false;

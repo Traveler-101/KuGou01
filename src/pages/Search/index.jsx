@@ -6,6 +6,7 @@ import SearchBox from "@/components/search-box";
 import Loading from "@/components/loading";
 import { changeEnterLoading, clearSearchHistory, getHotList, getResultSongsList } from './store/actionCreator'
 import { getName } from "@/api/utils";
+import { setSearchHistory_local } from "@/api/utils";
 
 const Search = (props) => {
     const [query, setQuery] = useState('');
@@ -25,9 +26,9 @@ const Search = (props) => {
 
     const navigate = useNavigate()
     useEffect(() => {
-        
+        if (!hotList.length) {
             getHotListDispatch()
-        
+        }
     }, [])
 
     const handleQuery = (q) => {
@@ -39,9 +40,8 @@ const Search = (props) => {
         }    
     }
     const deleteAllHistory = () => {
-        if (searchHistory.length) {
-            deleteAllSearchHistory()
-        }
+            deleteAllSearchHistory();
+            setSearchHistory_local([])
     }
     const renderHistory = () => {
         return searchHistory.length ?

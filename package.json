@@ -2,6 +2,7 @@
   "name": "kugou",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://traveler-101.github.io/KuGou01/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
