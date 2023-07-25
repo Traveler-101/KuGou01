@@ -35,7 +35,7 @@ export const getRecommendList = () => {
     return (dispatch) => {
         getRecommendRequest()
             .then(data => {
-                dispatch(changeRecommendList(data))
+                dispatch(changeRecommendList(data.data))
                 dispatch(changeEnterLoading(false))
             })
             .catch(() => {
